@@ -1,0 +1,17 @@
+{
+    "12345678-9": {
+        "nombre": "Juan Pérez",
+        "acompañantes": ["Ana Pérez", "José Martínez"],
+        "confirmado": false
+    },
+    "87654321-0": {
+        "nombre": "María Gómez",
+        "acompañantes": ["Luis Gómez", "Sofía López"],
+        "confirmado": false
+    },
+    "11111111-1": {
+        "nombre": "Carlos Díaz",
+        "acompañantes": [],
+        "confirmado": false
+    }
+}

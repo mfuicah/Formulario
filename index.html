@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Asistencia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Confirmar Asistencia</h2>
+        <form id="rutForm">
+            <!--<label for="rut">RUT:</label>-->
+            <br>
+            <input type="text" id="rut" placeholder="Ingrese su RUT" required>
+            <br>
+            <span id="error" class="error"></span>
+            <br>
+            <button type="button" id="checkRutBtn">Verificar RUT</button>
+        </form>
+
+        <div id="userInfo" class="hidden">
+            <p>Nombre: <span id="nombre"></span></p>
+            <br>
+            <div id="attendanceSelection" class="hidden">
+                <p>¿Quiénes asistirán?</p>
+                <label>
+                    <input type="checkbox" id="titularCheckbox"> Titular (<span id="titularName"></span>)
+                </label>
+                <div id="accompanistsCheckboxes"></div>
+            </div>
+            <br>
+            <!-- Alineación de "No asistiré" con los asistentes -->
+            <label id="noAsistireLabel">
+                <input type="checkbox" id="noAsistireCheckbox"> No asistiré
+            </label>
+            <br>
+            <button id="confirmBtn" class="hidden">Confirmar Asistencia</button>
+        </div>
+        
+        <div id="confirmMessage" class="hidden">
+            <p>¡Asistencia confirmada!</p>
+        </div>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>

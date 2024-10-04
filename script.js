@@ -16,16 +16,20 @@ async function actualizarDatos(rut, nombre, confirmacion, acompañantes) {
         },
         body: new URLSearchParams({
             action: 'update',
-            rut,
-            nombre,
-            confirmacion,
+            rut: rut,
+            nombre: nombre,
+            confirmado: confirmacion,
             acompañantes: acompañantes.join(','),
         }),
     });
 
-    if (!response.ok) throw new Error('Error al actualizar datos');
+    if (!response.ok) {
+        throw new Error('Error al actualizar datos');
+    }
+
     return await response.json();
 }
+
 
 // Reemplazar la lógica de verificación del RUT
 async function verificarRUT() {

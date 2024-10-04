@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conexión Google Sheets</title>
+</head>
+<body>
+  <h1>Datos desde Google Sheets</h1>
+  <div id="data"></div>
+
+  <script>
+    // Reemplaza por tu clave API
+    const API_KEY = 'AIzaSyAFbNFFcSK9ZrSjp9aQwvA1NOFgOtCJtQY';
+
+    // ID de la hoja de cálculo de Google Sheets
+    const SHEET_ID = '1Io3noGO5SUk0ZrzTWe_MZHjLr_LcTXVRJKM9p6PPkTc';
+
+    // Rango que deseas leer (por ejemplo, 'Hoja1!A1:B5')
+    const RANGE = 'Hoja1!A1:B10';
+
+    // URL para la solicitud a la API
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}?key=${API_KEY}`;
+
+    // Función para obtener los datos
+    async function fetchData() {
+      const response = await fetch(url);
+      const data = await response.json();
+
+      const output = document.getElementById('data');
+      
+      // Mostrar los datos en la página
+      data.values.forEach(row => {
+        output.innerHTML += `<p>${row.join(', ')}</p>`;
+      });
+    }
+
+    // Llamar a la función fetchData cuando se carga la página
+    window.onload = fetchData;
+  </script>
+</body>
+</html>
